@@ -1,0 +1,43 @@
+ show databases;
+ create database VITCampus;
+ use VITCampus;
+
+ create table CSE(
+ studentid int8,
+ studentname varchar(50),
+ studentmarks int1
+ );
+ 
+ create table EEE(
+ studentid int8,
+ studentname varchar(50),
+ studentmarks int1
+ );
+
+ create table Mech(
+ studentid int8,
+ studentname varchar(50),
+ studentmarks int1
+ );
+
+ show tables from VITCampus;
+
+ Insert into CSE values ( 101,'Manas',98);
+ Insert into CSE values ( 102,'Swapnil',100);
+ Insert into CSE values ( 103,'Tuhinsh',91);
+ Insert into CSE values ( 104,'Rudra',100);
+ Insert into CSE values ( 105,'Hussain',95);
+ 
+ Insert into EEE values ( 101,'Manas',92);
+ Insert into EEE values ( 102,'Swapnil',90);
+ Insert into EEE values ( 103,'Tuhinsh',92);
+ Insert into EEE values ( 104,'Rudra',89);
+ Insert into EEE values ( 105,'Hussain',94);
+ 
+ Insert into Mech values ( 101,'Manas',99);
+ Insert into Mech values ( 102,'Swapnil',100);
+ Insert into Mech values ( 103,'Tuhinsh',95);
+ Insert into Mech values ( 104,'Rudra',96);
+ Insert into Mech values ( 105,'Hussain',93);
+ 
+ Select * from CSE;
