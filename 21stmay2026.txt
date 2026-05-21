@@ -1,0 +1,66 @@
+use vitcampus;
+select * from category;
+drop table products;
+create table products (
+pid int primary key,
+pname varchar(100) not null,
+cid int,
+foreign key (cid) references category(cid) on delete cascade
+);
+desc products;
+
+insert into products values (502,'wooden cub',102);
+insert into products values (503,'power bank',101);
+insert into products values (504,'power bank samsung',101);
+
+select * from products;
+
+create table products (
+pid int primary key,
+pname varchar(100) not null,
+cid int,
+foreign key (cid) references category(cid) on update cascade
+);
+
+select * from worker;
+
+select first_name , department, salary from worker
+where department='admin' order by salary desc;
+
+#Group by
+
+select count(worker_id) from worder where department = 'admin' or department = 'HR';
+
+select department, count(department) from worker
+group by department order by department asc;
+
+select department, count(department) from worker
+group by department having count(department) >= 3 order by department asc;
+
+
+select * from worker limit 4 offset 3;
+
+select first_name,department from workers
+
+where worker_id in (select id from toppers);
+
+select first_name,department from workers
+where worker_id in (2,5);
+
+SELECT department, SUM(salary)
+FROM worker
+GROUP BY department
+ORDER BY SUM(salary) ASC
+LIMIT 2;
+
+select first_name, department, salary
+from worker w1
+where salary = (
+    select distinct salary
+    from worker w2
+    where w1.department = w2.department
+    order by salary desc
+    limit 1 offset 1
+);
+
+select * from worker;
