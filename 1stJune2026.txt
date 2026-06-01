@@ -1,0 +1,23 @@
+Output after executing Testing1.java :-
+
+101  Manas  100
+102  Swapnil  100
+103  Tuhnish  100
+104  Arthi  99
+
+Code in the MySQL workbench :-
+
+show databases;
+
+create database test;
+use test;
+create table student(sid int unique not null,sname varchar(30) not null,smarks int not null);
+
+desc student;
+insert into student values(101,'Manas',100);
+insert into student values(102,'Swapnil',100);
+insert into student values(103,'Tuhnish',100);
+insert into student values(104,'Arthi',99);
+select * from student;
+
+
